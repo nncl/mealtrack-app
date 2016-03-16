@@ -12,7 +12,6 @@ app.controller('AccountCtrl', function ($scope, $state, AuthService) {
 
 	$scope.submit = function () {
 		console.log("AccountCtrl::submit");
-		//TODO
 	};
 
 

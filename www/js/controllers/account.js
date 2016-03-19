@@ -5,10 +5,10 @@ var app = angular.module('mealtrack.controllers.account', []);
  *********************************************************************/
 app.controller('AccountCtrl', function ($scope, $state, AuthService) {
 
-	$scope.formData = {
-		name: AuthService.user.attributes.name,
-		email: AuthService.user.attributes.email
-	};
+	// $scope.formData = {
+	// 	name: AuthService.user.attributes.name,
+	// 	email: AuthService.user.attributes.email
+	// };
 
 	$scope.submit = function () {
 		console.log("AccountCtrl::submit");

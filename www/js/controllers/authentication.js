@@ -15,6 +15,7 @@ app.controller('LoginCtrl', function ($scope, $state, AuthService) {
 		if (form.$valid) {
 			//TODO
 			console.log('Valid');
+			$state.go('tab.meals');
 		} else {
 			console.log('Invalid');
 		}

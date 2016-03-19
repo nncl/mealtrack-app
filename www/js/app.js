@@ -1,6 +1,6 @@
 var app = angular.module('mealtrack', [
 	'ionic',
-	'ngMessages',
+	// 'ngMessages',
 	'ngCordova',
 	'angularMoment',
 	'parse-angular',
@@ -48,6 +48,33 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: "/tab",
 			abstract: true,
 			templateUrl: "templates/tabs.html"
+		})
+		.state('tab.meals', {
+			url: "/meals",
+			views : {
+				'tab-meals' : {
+					templateUrl: "templates/tabs/tab-meals.html",
+					controller : 'MealListCtrl'
+				}
+			}
+		})
+		.state('tab.track', {
+			url: "/track",
+			views : {
+				'tab-track' : {
+					templateUrl: "templates/tabs/tab-track.html",
+					controller : 'MealCreateCtrl'
+				}
+			}
+		})
+		.state('tab.account', {
+			url: "/account",
+			views : {
+				'tab-account' : {
+					templateUrl: "templates/tabs/tab-account.html",
+					controller : 'AccountCtrl'
+				}
+			}
 		})
 		//TODO
 	;

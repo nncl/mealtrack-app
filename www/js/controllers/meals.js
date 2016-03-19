@@ -53,17 +53,29 @@ app.controller('MealCreateCtrl', function ($scope,
 		//TODO
 	};
 
+	// TODO: in production, add CAMERA instead of PHOTOLIBRARY
 	$scope.addPicture = function () {
-		//var options = {
-		//	quality: 50,
-		//	destinationType: Camera.DestinationType.DATA_URL,
-		//	sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-		//	allowEdit: true,
-		//	encodingType: Camera.EncodingType.JPEG,
-		//	targetWidth: 480,
-		//	popoverOptions: CameraPopoverOptions,
-		//	saveToPhotoAlbum: false
-		//};
+		var options = {
+			quality: 50,
+			destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: Camera.PictureSourceType.PHOTOLIBRARY, // in production: CAMERA
+			allowEdit: true,
+			encodingType: Camera.EncodingType.JPEG,
+			targetWidth: 480,
+			popoverOptions: CameraPopoverOptions,
+			saveToPhotoAlbum: false
+		};
+
+		$cordovaCamera.getPicture(options).then(function(imageData){
+			$scope.formData.picture = imageData;
+		}, function error(err){
+			console.log('Error');
+			console.log(err);
+			$ionicPopup.alert({
+				title : 'Error getting picture',
+				subTitle : 'We had a problem trying to get picture, please try again'
+			});
+		});
 
 
 		//TODO

@@ -1,6 +1,6 @@
 var app = angular.module('mealtrack', [
 	'ionic',
-	// 'ngMessages',
+	'ngMessages',
 	'ngCordova',
 	'angularMoment',
 	'parse-angular',
